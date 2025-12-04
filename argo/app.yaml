@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+spec:
+  project: default
+  source:
+    path: apps
+    repoURL: https://dev.azure.com/materialise/escape/_git/infra-core
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
